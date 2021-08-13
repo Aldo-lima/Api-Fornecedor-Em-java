@@ -46,6 +46,7 @@ public Fornecedor(Integer id, String nome, String cnpj, String insc_esta) {
 	this.id = id;
 	this.nome = nome;
 	this.cnpj = cnpj;
+	this.insc_esta = insc_esta;
 
 }
 

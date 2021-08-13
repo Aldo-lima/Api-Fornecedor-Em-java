@@ -11,6 +11,7 @@ import com.api.produtos.service.DBService;
 @Configuration
 @Profile("test")
 public class TestComfig {
+
 	@Autowired
 	private DBService dbService;
 	
