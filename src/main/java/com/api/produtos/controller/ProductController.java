@@ -43,9 +43,9 @@ public class ProductController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Product> create(@RequestParam(value = "fornecedor", defaultValue = "0") Integer id_cat,
+	public ResponseEntity<Product> create(@RequestParam(value = "fornecedor", defaultValue = "0") Integer id_forn,
 		@RequestBody Product obj ){
-		Product newObj  = service.create(id_cat, obj);
+		Product newObj  = service.create(id_forn, obj);
 		URI uri = ServletUriComponentsBuilder.fromCurrentContextPath().path("/producit{id}").buildAndExpand(newObj.getId()).toUri();
 	   return ResponseEntity.created(uri).build();
 	}
