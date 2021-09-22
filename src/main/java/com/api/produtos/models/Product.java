@@ -24,6 +24,8 @@ public class Product implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    private String Unidade_medida;
+    private Integer quantidade_embalagem;
     private Double price;
     
     @JsonIgnore
@@ -37,10 +39,13 @@ public class Product implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Product(Integer id, String name, Double price, Fornecedor fornecedor, String descricao) {
+	public Product(Integer id, String name, String unidade_medida, Integer quantidade_embalagem, Double price,
+			Fornecedor fornecedor, String descricao) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.Unidade_medida = unidade_medida;
+		this.quantidade_embalagem = quantidade_embalagem;
 		this.price = price;
 		this.fornecedor = fornecedor;
 		this.descricao = descricao;
@@ -60,6 +65,22 @@ public class Product implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getUnidade_medida() {
+		return Unidade_medida;
+	}
+
+	public void setUnidade_medida(String unidade_medida) {
+		Unidade_medida = unidade_medida;
+	}
+
+	public Integer getQuantidade_embalagem() {
+		return quantidade_embalagem;
+	}
+
+	public void setQuantidade_embalagem(Integer quantidade_embalagem) {
+		this.quantidade_embalagem = quantidade_embalagem;
 	}
 
 	public Double getPrice() {
@@ -86,9 +107,13 @@ public class Product implements Serializable {
 		this.descricao = descricao;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(id);
+		return Objects.hash(Unidade_medida, descricao, fornecedor, id, name, price, quantidade_embalagem);
 	}
 
 	@Override
@@ -100,11 +125,12 @@ public class Product implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Product other = (Product) obj;
-		return Objects.equals(id, other.id);
+		return Objects.equals(Unidade_medida, other.Unidade_medida) && Objects.equals(descricao, other.descricao)
+				&& Objects.equals(fornecedor, other.fornecedor) && Objects.equals(id, other.id)
+				&& Objects.equals(name, other.name) && Objects.equals(price, other.price)
+				&& Objects.equals(quantidade_embalagem, other.quantidade_embalagem);
 	}
-	
-	
-	
+    
 	
 	
 }

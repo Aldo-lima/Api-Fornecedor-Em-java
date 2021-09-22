@@ -48,27 +48,27 @@ public class DBService {
 		Contato cont7 = new Contato(null, "josé", "gerente", "18-3885-4748", "celular", "josé@gmail.com", forn7);
 		Contato cont8 = new Contato(null, "josé", "gerente", "18-3885-4748", "celular", "josé@gmail.com", forn8);
 		
-		Product podu1 = new Product(null, "sabonete", 2.50, forn1, "com bom cheiro");
-		Product podu2 = new Product(null, "sabonete", 2.50, forn1, "com bom cheiro");
-		Product podu3 = new Product(null, "sabonete", 2.50, forn1, "com bom cheiro");
-		Product podu4 = new Product(null, "sabonete", 2.50, forn1, "com bom cheiro");
-		Product podu5 = new Product(null, "sabonete", 2.50, forn2, "com bom cheiro");
-		Product podu6 = new Product(null, "sabonete", 2.50, forn3, "com bom cheiro");
-		Product podu7 = new Product(null, "sabonete", 2.50, forn4, "com bom cheiro");
-		Product podu8 = new Product(null, "sabonete", 2.50, forn5, "com bom cheiro");
-		Product podu9 = new Product(null, "sabonete", 2.50, forn3, "com bom cheiro");
-		Product podu10 = new Product(null, "sabonete", 2.50, forn6, "com bom cheiro");
+		Product podu1 = new Product(null, "sabonete","unidade",1, 2.50, forn1, "com bom cheiro");
+		Product podu2 = new Product(null, "sabonete", "unidade",1,2.45, forn1, "com bom cheiro");
+		Product podu3 = new Product(null, "sabonete","unidade",1, 2.50, forn1, "com bom cheiro");
+		Product podu4 = new Product(null, "sabonete","unidade",1, 2.50, forn1, "com bom cheiro");
+		Product podu5 = new Product(null, "sabonete","unidade",1, 2.50, forn2, "com bom cheiro");
+		Product podu6 = new Product(null, "sabonete", "unidade",1, 2.50, forn3, "com bom cheiro");
+		Product podu7 = new Product(null, "sabonete","unidade",1, 2.50, forn4, "com bom cheiro");
+		Product podu8 = new Product(null, "sabonete","unidade",1, 2.50, forn5, "com bom cheiro");
+		Product podu9 = new Product(null, "sabonete","unidade",1, 2.50, forn3, "com bom cheiro");
+		Product podu10 = new Product(null, "sabonete","unidade",1, 2.50, forn6, "com bom cheiro");
 		
-		Product podu11 = new Product(null, "sabonete", 2.50, forn1, "com bom cheiro");
-		Product podu12 = new Product(null, "sabonete", 2.50, forn1, "com bom cheiro");
-		Product podu13 = new Product(null, "sabonete", 2.50, forn1, "com bom cheiro");
-		Product podu14 = new Product(null, "sabonete", 2.50, forn1, "com bom cheiro");
-		Product podu15 = new Product(null, "sabonete", 2.50, forn2, "com bom cheiro");
-		Product podu16 = new Product(null, "sabonete", 2.50, forn3, "com bom cheiro");
-		Product podu17 = new Product(null, "sabonete", 2.50, forn4, "com bom cheiro");
-		Product podu18 = new Product(null, "sabonete", 2.50, forn5, "com bom cheiro");
-		Product podu19 = new Product(null, "sabonete", 2.50, forn3, "com bom cheiro");
-		Product podu20 = new Product(null, "sabonete", 2.50, forn6, "com bom cheiro");
+		Product podu11 = new Product(null, "sabonete","unidade",1, 2.50, forn1, "com bom cheiro");
+		Product podu12 = new Product(null, "sabonete", "unidade",1, 2.50, forn1, "com bom cheiro");
+		Product podu13 = new Product(null, "sabonete","unidade",1, 2.50, forn1, "com bom cheiro");
+		Product podu14 = new Product(null, "sabonete","unidade",1, 2.50, forn1, "com bom cheiro");
+		Product podu15 = new Product(null, "sabonete","unidade",1, 2.50, forn2, "com bom cheiro");
+		Product podu16 = new Product(null, "sabonete", "unidade",1,2.50, forn3, "com bom cheiro");
+		Product podu17 = new Product(null, "sabonete","unidade",1, 2.50, forn4, "com bom cheiro");
+		Product podu18 = new Product(null, "sabonete","unudade",1, 2.50, forn5, "com bom cheiro");
+		Product podu19 = new Product(null, "sabonete","'unidade",1, 2.50, forn3, "com bom cheiro");
+		Product podu20 = new Product(null, "sabonete","unidade",1, 2.50, forn6, "com bom cheiro");
 		
 		forn1.getContato().addAll(Arrays.asList(cont1));
 		forn2.getContato().addAll(Arrays.asList(cont2));
