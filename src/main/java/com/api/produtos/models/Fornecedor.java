@@ -9,7 +9,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -27,7 +32,10 @@ public class Fornecedor implements Serializable {
    private String cnpj;
    private String insc_esta;
    
-  
+	
+	@ManyToOne
+	@JoinColumn(name = "categoria_id")
+	private Categoria categoria;
    
    @OneToMany(mappedBy = "fornecedor")
    private List<Enderecof> enderecof = new ArrayList<>();
@@ -121,6 +129,17 @@ public List<Enderecof> getEnderecof() {
 
 public void setEnderecof(List<Enderecof> enderecof) {
 	this.enderecof = enderecof;
+}
+
+
+
+
+public Categoria getCategoria() {
+	return categoria;
+}
+
+public void setCategoria(Categoria categoria) {
+	this.categoria = categoria;
 }
 
 @Override

@@ -5,9 +5,11 @@ import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.api.produtos.models.Categoria;
 import com.api.produtos.models.Contato;
 import com.api.produtos.models.Fornecedor;
 import com.api.produtos.models.Product;
+import com.api.produtos.repositories.CategoriaRepository;
 import com.api.produtos.repositories.ContatoRepository;
 import com.api.produtos.repositories.EnderecoRepository;
 import com.api.produtos.repositories.FornecedorRepository;
@@ -15,7 +17,11 @@ import com.api.produtos.repositories.ProductRepository;
 
 @Service
 public class DBService {
-  
+	@Autowired
+	 private CategoriaRepository categoriarepository;
+
+	
+	
 	@Autowired
     private FornecedorRepository  fornecedorRepository;
 	
@@ -29,6 +35,14 @@ public class DBService {
     private EnderecoRepository  enderecoRepository;
 	
 	public void InstanciaBaseDeDado() {
+		
+		
+		Categoria cat1 = new Categoria(null, "Alimento");
+		Categoria cat2 = new Categoria(null, "brinquedo");
+		Categoria cat5 = new Categoria(null, "joia");
+		Categoria cat3 = new Categoria(null, "eletr");
+		Categoria cat4 = new Categoria(null, "camas");
+		
 		
 		Fornecedor forn1 = new Fornecedor(null, "Faber Castel", "845715542-1/0001", "14521478451");
 		Fornecedor forn2 = new Fornecedor(null, "Faber Castel", "845715542-1/0001", "14521478451");
@@ -79,6 +93,21 @@ public class DBService {
 		forn7.getContato().addAll(Arrays.asList(cont7));
 		forn8.getContato().addAll(Arrays.asList(cont8));
 		
+		forn1.setCategoria(cat1);
+		forn2.setCategoria(cat2);
+		forn3.setCategoria(cat3);
+		forn4.setCategoria(cat4);
+	    forn5.setCategoria(cat5);
+	    forn6.setCategoria(cat5);
+	    forn7.setCategoria(cat5);
+	    forn8.setCategoria(cat5);
+	    
+		cat1.getFornecedor().add(forn1);
+		cat2.getFornecedor().add(forn2);
+		cat3.getFornecedor().add(forn3);
+		cat4.getFornecedor().add(forn4);
+		cat5.getFornecedor().addAll(Arrays.asList(forn5,forn6,forn7,forn8));
+		
 		forn1.getProduct().addAll(Arrays.asList(podu1, podu2, podu3, podu4, podu11, podu12, podu13, podu14 ));
 		forn2.getProduct().addAll(Arrays.asList(podu6, podu9, podu16, podu19));
 		forn3.getProduct().addAll(Arrays.asList(podu5, podu15));
@@ -86,9 +115,12 @@ public class DBService {
 		forn5.getProduct().addAll(Arrays.asList(podu8, podu18));
 		forn6.getProduct().addAll(Arrays.asList(podu10, podu20));
 		
+		
+	    categoriarepository.saveAll(Arrays.asList(cat1,cat2,cat3,cat4,cat5));
 		fornecedorRepository.saveAll(Arrays.asList(forn1, forn2, forn3, forn4, forn5, forn6, forn7, forn8 ));
 	    contatoRepository.saveAll(Arrays.asList(cont1, cont2, cont3, cont4, cont5, cont6, cont7, cont8 ));
 	    produtoRepository.saveAll(Arrays.asList(podu1, podu2, podu3, podu4, podu5, podu6, podu7, podu8, podu9, podu10, podu11, podu12, podu13, podu14, podu15, podu16, podu17, podu18, podu19, podu20 ));
+	   
 	}
 
 }
